@@ -183,8 +183,15 @@ STATIC = _dist if os.path.isdir(_dist) else os.path.join(_src_dir, "static")
 @app.get("/")
 def index():
     """index.html 禁止缓存，避免重建后仍引用旧 hashed chunk。"""
+    index_html = os.path.join(STATIC, "index.html")
+    if not os.path.isfile(index_html):
+        raise HTTPException(
+            503,
+            "Frontend is not built (missing frontend/dist or src/static). "
+            "Run the Vite build or deploy/dev/start.*",
+        )
     return FileResponse(
-        os.path.join(STATIC, "index.html"),
+        index_html,
         headers={
             "Cache-Control": "no-cache, no-store, must-revalidate",
             "Pragma": "no-cache",
@@ -194,4 +201,5 @@ def index():
 
 
 # 静态前端挂载在根路径（/@app 路由优先匹配 /api，其余回退到静态文件）
-app.mount("/", StaticFiles(directory=STATIC), name="static")
+if os.path.isdir(STATIC):
+    app.mount("/", StaticFiles(directory=STATIC), name="static")
