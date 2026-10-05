@@ -12,7 +12,7 @@ const result = ref<any>(null)
 const history = ref<any[]>([])
 
 async function runAudit() {
-  result.value = await api.nightAudit(hotelStore.hotelId, bizDate.value)
+  result.value = await api.runAudit({ hotel_id: hotelStore.hotelId, biz_date: bizDate.value })
   history.value.unshift({
     biz_date: bizDate.value,
     status: result.value.status,

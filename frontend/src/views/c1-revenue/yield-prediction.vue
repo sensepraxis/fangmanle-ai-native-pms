@@ -51,7 +51,7 @@ function cnName(c: any, i: number) {
             t('AI Auto-Rebalance (AI 自动均衡)')
           }}</span>
           <label class="relative inline-flex items-center cursor-pointer">
-            <input checked="" class="sr-only peer" type="checkbox" value="" />
+            <input checked class="sr-only peer" type="checkbox" value="" />
             <div
               class="w-11 h-6 bg-outline-variant rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"
             ></div>
@@ -271,7 +271,7 @@ function cnName(c: any, i: number) {
             <div class="flex items-center justify-between bg-white/60 p-3 rounded-lg mb-3">
               <span class="font-label-lg text-label-lg">Auto Safety Stop</span>
               <label class="relative inline-flex items-center cursor-pointer">
-                <input checked="" class="sr-only peer" type="checkbox" value="" />
+                <input checked class="sr-only peer" type="checkbox" value="" />
                 <div
                   class="w-9 h-5 bg-outline-variant rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"
                 ></div>

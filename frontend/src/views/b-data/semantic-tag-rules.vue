@@ -81,7 +81,7 @@ const highlights = computed(() =>
     .slice(0, 4),
 )
 
-const riskTags = computed(() => rows.value.filter((t) => t.category === t('风险')))
+const riskTags = computed(() => rows.value.filter((row) => row.category === t('风险')))
 
 function coverPct(n?: number) {
   return Math.round((Number(n || 0) / maxCover.value) * 100)
@@ -189,7 +189,7 @@ async function saveAndApply(t: TagRow) {
 
         <div v-if="!filtered.length" class="empty">{{ t('暂无匹配的标签规则') }}</div>
         <div v-else class="rule-list">
-          <article v-for="tag in filtered" :key="item.id" class="rule-card">
+          <article v-for="tag in filtered" :key="tag.id" class="rule-card">
             <div class="rule-top">
               <div class="rule-title-row">
                 <h3>{{ tag.name }}</h3>

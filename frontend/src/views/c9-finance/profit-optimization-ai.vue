@@ -394,7 +394,7 @@ watch(() => hotelStore.hotelId, load)
           <div
             class="absolute left-0 top-2 bottom-10 flex flex-col justify-between font-num-md text-[10px] text-outline w-9 text-right pr-1"
           >
-            <span v-for="(item, ti) in waterfallBars.yTicks" :key="ti">{{ shortMoney(t) }}</span>
+            <span v-for="(item, ti) in waterfallBars.yTicks" :key="ti">{{ shortMoney(item) }}</span>
           </div>
 
           <div class="h-full relative border-l border-b border-outline-variant/60 pb-10">

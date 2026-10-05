@@ -165,7 +165,7 @@ watch(() => hotelStore.hotelId, load)
               class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in"
             >
               <input
-                checked=""
+                checked
                 class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer z-10"
                 id="toggle1"
                 name="toggle1"
@@ -234,7 +234,7 @@ watch(() => hotelStore.hotelId, load)
               class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in"
             >
               <input
-                checked=""
+                checked
                 class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer z-10"
                 id="toggle2"
                 name="toggle2"
@@ -303,7 +303,7 @@ watch(() => hotelStore.hotelId, load)
               class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in"
             >
               <input
-                checked=""
+                checked
                 class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer z-10"
                 id="toggle3"
                 name="toggle3"

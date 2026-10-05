@@ -239,33 +239,33 @@ watch(() => hotelStore.hotelId, load)
                   v-for="(item, i) in txs"
                   :key="i"
                   class="border-b border-surface-variant hover:bg-surface-container-lowest transition-colors"
-                  :class="t.paid ? 'bg-surface-container-lowest/50' : ''"
+                  :class="item.paid ? 'bg-surface-container-lowest/50' : ''"
                 >
                   <td
                     class="p-4 font-num-md text-on-surface-variant"
-                    :class="t.paid ? 'opacity-70' : ''"
+                    :class="item.paid ? 'opacity-70' : ''"
                   >
-                    {{ t.date }}
+                    {{ item.date }}
                   </td>
                   <td class="p-4">
                     <div class="flex items-center gap-2">
                       <span
                         class="material-symbols-outlined text-sm"
-                        :class="t.paid ? '' : t.iconCls"
-                        >{{ t.icon }}</span
+                        :class="item.paid ? '' : item.iconCls"
+                        >{{ item.icon }}</span
                       >
-                      {{ t.desc }}
+                      {{ item.desc }}
                     </div>
                   </td>
                   <td
                     class="p-4 font-num-md text-right"
-                    :class="t.paid ? 'text-on-surface-variant/70' : ''"
+                    :class="item.paid ? 'text-on-surface-variant/70' : ''"
                   >
-                    ¥{{ t.amount }}
+                    ¥{{ item.amount }}
                   </td>
                   <td class="p-4">
                     <span
-                      v-if="!t.paid"
+                      v-if="!item.paid"
                       class="bg-error-container text-on-error-container px-2 py-1 rounded-full text-xs font-label-lg border border-error/20 flex w-max items-center gap-1"
                     >
                       <span class="w-1.5 h-1.5 rounded-full bg-error"></span>
@@ -280,7 +280,7 @@ watch(() => hotelStore.hotelId, load)
                     >
                   </td>
                   <td class="p-4">
-                    <button v-if="!t.paid" class="text-primary hover:underline text-sm">
+                    <button v-if="!item.paid" class="text-primary hover:underline text-sm">
                       {{ t('催款') }}
                     </button>
                     <button v-else class="text-secondary hover:text-primary transition-colors">

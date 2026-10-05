@@ -175,7 +175,7 @@ async function load() {
     // —— 动态安全库存：近月实际 + 未来 AI 预测 ——
     const now = new Date()
     const m = now.getMonth() + 1
-    const yr = now.getYear ? now.getFullYear() : now.getFullYear()
+    const yr = now.getFullYear()
     const monthLabel = (n: number) => {
       let x = n
       while (x <= 0) x += 12

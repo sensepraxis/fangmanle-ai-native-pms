@@ -127,7 +127,7 @@ function cellTitle(d: any) {
 }
 
 function onEnter(d: any) {
-  const lines = []
+  const lines: string[] = []
   if (d.hist_yoy_pct != null) lines.push(t('去年同期入住 {n}%', { n: d.hist_yoy_pct }))
   else lines.push(t('去年同期：暂无历史样本'))
   if (d.hist_mom_pct != null) lines.push(t('上月同期入住 {n}%', { n: d.hist_mom_pct }))

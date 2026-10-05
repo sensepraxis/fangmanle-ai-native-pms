@@ -123,10 +123,10 @@ export function useGuest360(route?: RouteLocationNormalizedLoaded) {
   const oneIdLabel = computed(
     () => g.value.one_id || `ONE${String(g.value.id || 0).padStart(6, '0')}`,
   )
-  const channelChips = computed(() => {
-    const names = identities.value.map((i: any) => identitySourceLabel(i))
+  const channelChips = computed((): string[] => {
+    const names = identities.value.map((i: any) => String(identitySourceLabel(i)))
     const uniq = [...new Set(names.filter(Boolean))]
-    return uniq.length ? uniq : [t('本店直客')]
+    return uniq.length ? uniq.map((x) => String(x)) : [t('本店直客')]
   })
   const sourceBars = computed(() => {
     const list = identities.value

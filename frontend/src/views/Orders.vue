@@ -170,7 +170,9 @@ async function loadMeta() {
 async function loadBoard() {
   try {
     const board = await api.ordersBoard(hotelStore.hotelId)
-    const map = new Map((board?.sources || []).map((s: any) => [s.key, s]))
+    const map = new Map<string, { label?: string; count?: number }>(
+      (board?.sources || []).map((s: any) => [String(s.key), s]),
+    )
     boardSources.value = ORDER_GROUP_KEYS.map((key) => ({
       key,
       label: SOURCE_LABEL[key] || map.get(key)?.label || key,

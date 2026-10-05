@@ -10,6 +10,16 @@ const props = defineProps<{
 
 const { statusFilter, statusCounts, filteredRules, fmtNum, editRule, toggleRule, removeRule } =
   props.ruleApi
+
+function statusLabel(status: string) {
+  const map: Record<string, string> = {
+    active: t('启用中'),
+    paused: t('已暂停'),
+    draft: t('草稿'),
+    expired: t('已过期'),
+  }
+  return map[status] || status
+}
 </script>
 
 <template>
@@ -59,14 +69,7 @@ const { statusFilter, statusCounts, filteredRules, fmtNum, editRule, toggleRule,
             </td>
             <td>{{ r.last_triggered_text || '—' }}</td>
             <td>
-              <span class="st" :class="r.status">{{
-                {
-                  active: t('启用中'),
-                  paused: t('已暂停'),
-                  draft: t('草稿'),
-                  expired: t('已过期'),
-                }[r.status] || r.status
-              }}</span>
+              <span class="st" :class="r.status">{{ statusLabel(r.status) }}</span>
             </td>
             <td class="acts">
               <button type="button" class="row-act" @click="editRule(r)">{{ t('编辑') }}</button>

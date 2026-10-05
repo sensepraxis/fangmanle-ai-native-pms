@@ -511,7 +511,7 @@ onMounted(async () => {
             >
             <div style="display: flex; flex-wrap: wrap; gap: 8px">
               <span
-                v-for="t in tags"
+                v-for="tag in tags"
                 :key="tag"
                 style="
                   padding: 4px 8px;

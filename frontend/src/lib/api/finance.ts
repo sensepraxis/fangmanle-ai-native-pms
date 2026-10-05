@@ -429,7 +429,7 @@ export const financeApi = {
     ),
   financeAiPlanGenerate: (
     hotelId: number,
-    scene: 'deposit' | 'refund' | 'night_audit' | 'recon' | 'invoice',
+    scene: 'deposit' | 'refund' | 'night_audit' | 'recon' | 'invoice' | 'ar_ap',
   ) => req<any>('POST', `/finance/ai-plan/generate?hotel_id=${hotelId}`, { scene }),
   financeAiPlanConfirm: (hotelId: number, plan: Record<string, unknown>) =>
     req<any>('POST', `/finance/ai-plan/confirm?hotel_id=${hotelId}`, { plan }),
