@@ -233,6 +233,8 @@ class WecomHttpTests(unittest.TestCase):
         except urllib.error.HTTPError as e:
             # 即使 401 / 403 也算路由可达
             self.assertIn(e.code, (200, 401, 403, 422))
+        except urllib.error.URLError:
+            self.skipTest("后端未启动 (8081)")
 
 
 def main():

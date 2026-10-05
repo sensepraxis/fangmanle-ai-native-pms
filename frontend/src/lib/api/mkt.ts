@@ -230,7 +230,7 @@ export const mktApi = {
       'GET',
       `/acquisition/leads?hotel_id=${hotelId}${stage ? `&stage=${encodeURIComponent(stage)}` : ''}`,
     ),
-  acquisitionMockIngest: (payload: { hotel_id: number; count?: number }) =>
+  acquisitionMockIngest: (payload: { hotel_id: number; count?: number; channel?: string }) =>
     req<any[]>('POST', '/acquisition/leads/mock-ingest', payload),
   acquisitionManualLead: (payload: Record<string, unknown>) =>
     req<any>('POST', '/acquisition/leads/manual', payload),

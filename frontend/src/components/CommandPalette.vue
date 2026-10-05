@@ -7,6 +7,7 @@ import { useRouter } from 'vue-router'
 import { api } from '../lib/api'
 import { hotelStore } from '../store/hotel'
 import { commercialEnabled, packUiRev } from '../lib/branding'
+import { pageManifest } from '../pages.manifest'
 
 const router = useRouter()
 const open = ref(false)

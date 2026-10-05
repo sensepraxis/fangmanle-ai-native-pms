@@ -18,7 +18,9 @@ const route = useRoute()
 const router = useRouter()
 const tasks = ref<any[]>([])
 const parts = ref<any[]>([])
-const assetOptions = ref<{ id: number; label: string; room: string; name: string }[]>([])
+const assetOptions = ref<
+  { id: number; label: string; room: string; name: string; assetNo: string }[]
+>([])
 const insight = ref({ desc: ASSETS_EMPTY })
 const activeTab = ref('all')
 const showCreate = ref(false)
@@ -475,7 +477,7 @@ watch(() => route.query.asset_id, load)
         <button class="btn btn-ghost" type="button">
           <span class="material-symbols-outlined">filter_list</span> {{ t('筛选') }}
         </button>
-        <button class="btn btn-primary" type="button" @click="openCreate">
+        <button class="btn btn-primary" type="button" @click="() => openCreate()">
           <span class="material-symbols-outlined">add</span> {{ t('新建报修') }}
         </button>
       </div>
@@ -916,7 +918,7 @@ watch(() => route.query.asset_id, load)
                   >
                   <span class="pill" :class="'pill-' + item.statusCls">{{ item.status }}</span>
                   <span
-                    v-if="t.part"
+                    v-if="item.part"
                     style="
                       font-size: 11px;
                       color: var(--tertiary);
@@ -930,7 +932,7 @@ watch(() => route.query.asset_id, load)
                     ><span class="material-symbols-outlined" style="font-size: 12px"
                       >inventory_2</span
                     >
-                    {{ t.part }}</span
+                    {{ item.part }}</span
                   >
                 </div>
                 <div
@@ -943,20 +945,20 @@ watch(() => route.query.asset_id, load)
                     flex-wrap: wrap;
                   "
                 >
-                  <span v-if="t.time" style="display: flex; align-items: center; gap: 4px"
+                  <span v-if="item.time" style="display: flex; align-items: center; gap: 4px"
                     ><span class="material-symbols-outlined" style="font-size: 14px">schedule</span
-                    >{{ t.time }}</span
+                    >{{ item.time }}</span
                   >
-                  <span v-if="t.by" style="display: flex; align-items: center; gap: 4px"
+                  <span v-if="item.by" style="display: flex; align-items: center; gap: 4px"
                     ><span class="material-symbols-outlined" style="font-size: 14px">person</span
-                    >{{ t.by }}</span
+                    >{{ item.by }}</span
                   >
-                  <span v-if="t.worker" style="display: flex; align-items: center; gap: 4px">
+                  <span v-if="item.worker" style="display: flex; align-items: center; gap: 4px">
                     <span class="material-symbols-outlined" style="font-size: 14px"
                       >engineering</span
                     >
-                    {{ t.worker }}
-                    <span v-if="t.executor === 'vendor'" class="exec-tag">{{ t('外协') }}</span>
+                    {{ item.worker }}
+                    <span v-if="item.executor === 'vendor'" class="exec-tag">{{ t('外协') }}</span>
                   </span>
                 </div>
               </div>
@@ -967,14 +969,14 @@ watch(() => route.query.asset_id, load)
                       width: '12px',
                       height: '12px',
                       borderRadius: '50%',
-                      background: t.step >= 1 ? 'var(--primary)' : 'var(--surface-variant)',
+                      background: item.step >= 1 ? 'var(--primary)' : 'var(--surface-variant)',
                     }"
                   ></span>
                   <span
                     :style="{
                       width: '32px',
                       height: '2px',
-                      background: t.step >= 2 ? 'var(--primary)' : 'var(--surface-variant)',
+                      background: item.step >= 2 ? 'var(--primary)' : 'var(--surface-variant)',
                     }"
                   ></span>
                   <span
@@ -982,14 +984,14 @@ watch(() => route.query.asset_id, load)
                       width: '12px',
                       height: '12px',
                       borderRadius: '50%',
-                      background: t.step >= 2 ? 'var(--primary)' : 'var(--surface-variant)',
+                      background: item.step >= 2 ? 'var(--primary)' : 'var(--surface-variant)',
                     }"
                   ></span>
                   <span
                     :style="{
                       width: '32px',
                       height: '2px',
-                      background: t.step >= 3 ? 'var(--primary)' : 'var(--surface-variant)',
+                      background: item.step >= 3 ? 'var(--primary)' : 'var(--surface-variant)',
                     }"
                   ></span>
                   <span
@@ -997,7 +999,7 @@ watch(() => route.query.asset_id, load)
                       width: '12px',
                       height: '12px',
                       borderRadius: '50%',
-                      background: t.step >= 3 ? 'var(--primary)' : 'var(--surface-variant)',
+                      background: item.step >= 3 ? 'var(--primary)' : 'var(--surface-variant)',
                     }"
                   ></span>
                 </div>

@@ -207,15 +207,15 @@ watch(days, load)
         <g v-for="(item, ti) in yTicks" :key="'yt-' + ti">
           <line
             :x1="TPAD.l"
-            :y1="trendY(t)"
+            :y1="trendY(item)"
             :x2="TW - TPAD.r"
-            :y2="trendY(t)"
+            :y2="trendY(item)"
             stroke="#e7e0ec"
             stroke-width="1"
-            :stroke-dasharray="t === 0 ? '0' : '4 3'"
+            :stroke-dasharray="item === 0 ? '0' : '4 3'"
           />
-          <text :x="TPAD.l - 8" :y="trendY(t) + 3" text-anchor="end" class="axis-tick">
-            {{ t }}
+          <text :x="TPAD.l - 8" :y="trendY(item) + 3" text-anchor="end" class="axis-tick">
+            {{ item }}
           </text>
         </g>
         <line

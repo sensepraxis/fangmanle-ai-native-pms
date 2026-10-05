@@ -14,7 +14,7 @@ import { hotelStore } from '../../store/hotel'
 const route = useRoute()
 const router = useRouter()
 
-type Tab = 'all' | t('清洁用品') | t('客用品')
+type Tab = 'all' | string
 
 const allItems = ref<any[]>([])
 const rooms = ref<string[]>([])
@@ -105,7 +105,12 @@ const items = computed(() => {
   return rows.slice(0, 12).map(mapSupply)
 })
 
-const damageChoices = computed(() => items.value.slice(0, 6).map((x) => x.name).filter(Boolean))
+const damageChoices = computed(() =>
+  items.value
+    .slice(0, 6)
+    .map((x) => x.name)
+    .filter(Boolean),
+)
 
 async function load() {
   tab.value = normalizeTab(route.query.cat)
@@ -119,7 +124,9 @@ async function load() {
     }
     if (!supplies.length) {
       try {
-        supplies = (await api.listSupplies(hotelStore.hotelId) || []).filter((x: any) => !isLinen(x))
+        supplies = ((await api.listSupplies(hotelStore.hotelId)) || []).filter(
+          (x: any) => !isLinen(x),
+        )
       } catch {
         supplies = []
       }
@@ -135,9 +142,12 @@ async function load() {
 
 onMounted(load)
 watch(() => hotelStore.hotelId, load)
-watch(() => route.query.cat, (v) => {
-  tab.value = normalizeTab(v)
-})
+watch(
+  () => route.query.cat,
+  (v) => {
+    tab.value = normalizeTab(v)
+  },
+)
 </script>
 
 <template>

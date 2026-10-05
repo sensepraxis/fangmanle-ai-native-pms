@@ -15,7 +15,7 @@ backend:lint:
   image: python:3.12-bookworm
   script:
     - pip install -r requirements-prod.txt
-    - pip install pytest ruff
+    - pip install pytest "ruff>=0.16,<0.17"
     - ruff check src
     - ruff format --check src tools
     - python tools/check_router_layer.py

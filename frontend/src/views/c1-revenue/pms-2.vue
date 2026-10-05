@@ -126,7 +126,7 @@ function disc(r: any) {
               >
                 <span class="text-sm font-medium">{{ t('启用协议价保护') }}</span>
                 <label class="relative inline-flex items-center cursor-pointer">
-                  <input checked="" class="sr-only peer" type="checkbox" />
+                  <input checked class="sr-only peer" type="checkbox" />
                   <div
                     class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"
                   ></div>
@@ -162,7 +162,7 @@ function disc(r: any) {
                 class="flex items-start gap-3 p-4 rounded-lg border-2 border-primary bg-primary-fixed/30 cursor-pointer relative overflow-hidden group"
               >
                 <input
-                  checked=""
+                  checked
                   class="mt-1 text-primary focus:ring-primary"
                   name="execution_mode"
                   type="radio"

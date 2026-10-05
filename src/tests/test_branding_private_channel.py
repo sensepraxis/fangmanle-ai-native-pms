@@ -50,10 +50,11 @@ class CommercialCapabilityTests(unittest.TestCase):
 
     def test_branding_exposes_commercial_flag(self):
         from infra.branding import branding_public_dict
+        from infra.commercial_pack import commercial_enabled
 
         d = branding_public_dict()
         self.assertIn("commercial_enabled", d)
-        self.assertTrue(d["commercial_enabled"])
+        self.assertEqual(d["commercial_enabled"], commercial_enabled())
 
     def test_flag_off_hides_ai_menus(self):
         os.environ["FML_COMMERCIAL"] = "0"

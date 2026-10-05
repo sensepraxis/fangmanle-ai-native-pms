@@ -348,12 +348,13 @@ async function submitCreate() {
                 <span
                   class="px-3 py-1 rounded-full text-sm font-label-lg cursor-pointer"
                   :class="
-                    t.active
+                    item.active
                       ? 'bg-primary-container text-on-primary-container'
                       : 'bg-surface-high text-on-surface-variant'
                   "
-                  :style="t.danger ? 'background:#ffdad6;color:#93000a' : ''"
-                  >{{ t.label }}</span
+                  :style="item.danger ? 'background:#ffdad6;color:#93000a' : ''"
+                  >{{ item.label }}</span
+                >
                 >
               </template>
             </div>

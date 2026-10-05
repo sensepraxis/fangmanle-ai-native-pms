@@ -31,6 +31,7 @@ from finance.deposit_ops import (  # noqa: F401
     reauthorize,
     release,
 )
+from finance.deposit_status import TRANSITIONS  # noqa: F401
 
 __all__ = [
     "yuan",
@@ -50,6 +51,7 @@ __all__ = [
     "lookup_by_phone",
     "lookup_by_guest",
     "lookup_by_room",
+    "TRANSITIONS",
     "_write_ledger",
     "_next_deposit_id",
 ]
