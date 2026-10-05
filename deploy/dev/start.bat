@@ -1,17 +1,17 @@
 @echo off
 chcp 65001 >nul
-REM Dev start (SQLite full demo). Default: commercial AI on (FML_COMMERCIAL=1).
-REM OpenCore only: use start-opencore.bat in this folder (forces FML_COMMERCIAL=0).
-REM Port: FML_PORT in this file (default 8081). Override via env. Do not put port in the filename.
+REM 常规开发启动（SQLite 完整 demo）· 默认启用商业 AI（FML_COMMERCIAL=1）。
+REM 只要 OpenCore：请用同目录 start-opencore.bat（脚本内写死 FML_COMMERCIAL=0）。
+REM 端口写在本文件 FML_PORT，不要写进文件名。可用环境变量覆盖。
 REM
-REM   deploy\dev\start.bat
+REM   deploy\dev\start.bat                 → config\hotels\demo-cn.yaml
 REM   deploy\dev\start.bat demo-sg
 REM   deploy\dev\start.bat abc-hotel.yaml
 REM   deploy\dev\start.bat D:\cfg\my.yaml
-REM Python: python / py on PATH, or set FML_PYTHON.
+REM Python：PATH 中的 python / py；可设 FML_PYTHON 覆盖。
 
 if not defined FML_PORT set "FML_PORT=8081"
-REM Product default: commercial on. OpenCore entry sets FML_COMMERCIAL=0 before calling this script.
+REM 产品默认：开商业包。OpenCore 入口会先设 FML_COMMERCIAL=0 再 call 本脚本。
 if not defined FML_COMMERCIAL set "FML_COMMERCIAL=1"
 
 set "SCRIPT_DIR=%~dp0"
@@ -57,21 +57,17 @@ title Fangmanle PMS %FML_PORT% [hotel=%FML_HOTEL% locale=%SEED_LOCALE%]
 echo ============================================
 echo Fangmanle PMS
 echo Port:       %FML_PORT%
+echo Hotel YAML: %FML_HOTEL_FILE%
 echo Hotel:      %FML_HOTEL%
-if defined FML_HOTEL_YAML (
-    echo Hotel config loaded from: %FML_HOTEL_YAML%
-) else (
-    echo Hotel config loaded from: %FML_HOTEL_FILE%
-)
 echo Locale:     %SEED_LOCALE%
-echo Commercial: %FML_COMMERCIAL%  [1=on / 0=OpenCore only]
+echo Commercial: %FML_COMMERCIAL%  ^(1=on · 0=OpenCore only^)
 echo DB:         %DB_PATH%
 echo ============================================
 echo.
 
 if /I "%SKIP_FE_BUILD%"=="1" (
     echo.
-    echo [skip] Frontend build skipped [SKIP_FE_BUILD=1]
+    echo [skip] Frontend build skipped ^(SKIP_FE_BUILD=1^)
     goto AFTER_FE
 )
 
@@ -81,7 +77,7 @@ if exist "%REPO_DIR%\locales\en.json" copy /Y "%REPO_DIR%\locales\en.json" "%FE_
 if exist "%REPO_DIR%\locales\zh-CN.json" copy /Y "%REPO_DIR%\locales\zh-CN.json" "%FE_DIR%\src\locales\zh-CN.json" >nul
 
 echo.
-echo [2/3] Building frontend [clean vite -^> frontend\dist] ...
+echo [2/3] Building frontend ^(clean vite -^> frontend\dist^) ...
 cd /d "%FE_DIR%"
 if exist "%FE_DIR%\dist" (
     echo      Removing old dist...
@@ -105,7 +101,7 @@ if errorlevel 1 (
 )
 
 echo.
-echo      Open http://127.0.0.1:%FML_PORT%/  [Ctrl+C to stop]
+echo      Open http://127.0.0.1:%FML_PORT%/  ^(Ctrl+C to stop^)
 echo.
 
 cd /d "%SRC_DIR%"
