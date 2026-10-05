@@ -140,7 +140,10 @@ class HotelAssembleTests(unittest.TestCase):
         from infra.hotel import ensure_hotel, reset_hotel
         from infra.hotel_config import repo_root
 
-        os.environ["FML_HOTEL_FILE"] = str(repo_root() / "config" / "hotels" / "abc-hotel.yaml")
+        yaml_path = repo_root() / "config" / "hotels" / "abc-hotel.yaml"
+        if not yaml_path.is_file():
+            self.skipTest("abc-hotel.yaml removed; demo hotels cover YAML assemble")
+        os.environ["FML_HOTEL_FILE"] = str(yaml_path)
         os.environ.pop("FML_PACKS", None)
         os.environ.pop("FML_HOTEL", None)
         reset_hotel()
@@ -158,7 +161,7 @@ class HotelAssembleTests(unittest.TestCase):
         os.environ["FML_HOTEL_FILE"] = str(repo_root() / "config" / "hotels" / "demo-cn.yaml")
         ids = list_profile_ids()
         self.assertIn("demo-cn", ids)
-        self.assertIn("abc-hotel", ids)
+        self.assertIn("demo-sg", ids)
         sg = get_profile("sg")
         self.assertEqual(sg.get("id") or sg.get("_id"), "demo-sg")
         self.assertNotIn("channels", sg)

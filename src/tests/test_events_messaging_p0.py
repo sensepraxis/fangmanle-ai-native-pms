@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import os
 import unittest
 from unittest.mock import MagicMock, patch
 
@@ -45,6 +46,17 @@ class EmitExportTests(unittest.TestCase):
 
 
 class MessagingFactoryTests(unittest.TestCase):
+    def setUp(self):
+        from infra.private_channel import clear_vendor_cache, configure_vendor
+        from messaging import reset_channel_cache
+
+        os.environ.pop("PRIVATE_CHANNEL_VENDOR", None)
+        os.environ.pop("PRIVATE_CHANNEL_FALLBACK", None)
+        os.environ.pop("PRIVATE_CHANNEL_PACKS", None)
+        clear_vendor_cache()
+        configure_vendor("wecom")
+        reset_channel_cache()
+
     def tearDown(self):
         from messaging import reset_channel_cache
 

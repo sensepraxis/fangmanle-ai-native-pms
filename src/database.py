@@ -31,6 +31,7 @@ from pathlib import Path
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.pool import NullPool
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent
 _DEFAULT_SQLITE = _REPO_ROOT / "data" / "fml_demo.db"
@@ -44,13 +45,17 @@ def default_database_url() -> str:
 
 DATABASE_URL = (os.environ.get("DATABASE_URL") or "").strip() or default_database_url()
 
-# connect_args 按后端类型分支
 if DATABASE_URL.startswith("sqlite"):
-    connect_args = {"check_same_thread": False, "timeout": 30}
+    connect_args = {"check_same_thread": False, "timeout": 15}
+    engine = create_engine(
+        DATABASE_URL,
+        connect_args=connect_args,
+        poolclass=NullPool,
+        future=True,
+    )
 else:
     connect_args = {"connect_timeout": 5}
-
-engine = create_engine(DATABASE_URL, connect_args=connect_args, future=True)
+    engine = create_engine(DATABASE_URL, connect_args=connect_args, future=True)
 
 if DATABASE_URL.startswith("sqlite"):
     from sqlalchemy import event
@@ -59,7 +64,7 @@ if DATABASE_URL.startswith("sqlite"):
     def _sqlite_concurrency_pragma(dbapi_conn, _record):
         cursor = dbapi_conn.cursor()
         cursor.execute("PRAGMA journal_mode=WAL")
-        cursor.execute("PRAGMA busy_timeout=30000")
+        cursor.execute("PRAGMA busy_timeout=15000")
         cursor.execute("PRAGMA synchronous=NORMAL")
         cursor.close()
 

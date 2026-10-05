@@ -14,7 +14,7 @@ import { hotelStore } from '../../store/hotel'
 const route = useRoute()
 const router = useRouter()
 
-type Tab = 'all' | t('清洁用品') | t('客用品')
+type Tab = 'all' | string
 
 const allItems = ref<any[]>([])
 const rooms = ref<string[]>([])

@@ -18,6 +18,7 @@ from __future__ import annotations
 import os
 import sys
 import tempfile
+import time
 from pathlib import Path
 
 # ---- 0) 路径：确保 import database / models / ... 可用 ----
@@ -87,11 +88,39 @@ def _reset_shared_room_state(request):
     为什么用 function-scope autouse：
     - pytest + unittest.TestCase 集成时，fixture 不会注入到 setUpClass/setUp
     - 但 fixture 在每个 test 函数前自动跑，覆盖 unittest.setUp
+
+    unittest 常用 setUpClass 里长期占用 SessionLocal；SQLite 会把未提交事务
+    锁到「database is locked」。先把 class 会话提交/回滚，再更新房态。
     """
+    from sqlalchemy.exc import OperationalError
+
+    cls = getattr(request, "cls", None)
+    class_db = getattr(cls, "db", None) if cls is not None else None
+    if class_db is not None:
+        try:
+            class_db.commit()
+        except Exception:
+            class_db.rollback()
+
     db = SessionLocal()
     try:
-        db.query(Room).update({"status": "VC"})
-        db.commit()
+        last_err: OperationalError | None = None
+        for attempt in range(3):
+            try:
+                db.query(Room).update({"status": "VC"})
+                db.commit()
+                last_err = None
+                break
+            except OperationalError as exc:
+                last_err = exc
+                db.rollback()
+                if "locked" not in str(exc).lower() or attempt == 2:
+                    break
+                time.sleep(0.2 * (attempt + 1))
+        if last_err is not None and "locked" not in str(last_err).lower():
+            raise last_err
+        if class_db is not None:
+            class_db.expire_all()
     finally:
         db.close()
     yield

@@ -133,6 +133,7 @@ class ArApServiceTests(unittest.TestCase):
         from finance.ar_ap_service import list_workspace
 
         list_workspace(cls.db, HOTEL_ID)
+        cls.db.commit()
 
     @classmethod
     def tearDownClass(cls):

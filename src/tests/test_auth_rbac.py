@@ -205,6 +205,7 @@ class AuthHttpTests(unittest.TestCase):
 
     def test_h02_login_wrong_password(self):
         """AUTH-H02：错误密码 → 401。"""
+        self._skip_if_down()
         body = json.dumps({"username": "admin", "password": "wrong"}).encode()
         req = urllib.request.Request(
             API_BASE + "/api/v1/auth/login",
@@ -217,6 +218,8 @@ class AuthHttpTests(unittest.TestCase):
             self.fail("应抛 401")
         except urllib.error.HTTPError as e:
             self.assertEqual(e.code, 401)
+        except urllib.error.URLError:
+            self.skipTest("后端未启动 (8081)")
 
     def test_h03_me(self):
         """AUTH-H03：/auth/me 带 token → 200 + user info。"""
