@@ -1,0 +1,32 @@
+# 酒店组装配置（非国情包）。启动: deploy\dev\start.bat demo-gb
+id: demo-gb
+locale: en
+aliases:
+- gb
+- uk
+- britain
+currency: GBP
+tax:
+  name: vat_gb
+  rate: 0.2
+system:
+  private_channel: true
+  wecom: false
+  llm: true
+  map: true
+  finance: true
+  room_types: true
+  rooms: true
+  users: true
+  rbac: true
+vendors:
+  map: google
+  messaging:
+    primary: whatsapp
+    fallback: [email, sms]
+    packs: [private_ops_core]
+  llm: openai_compatible
+  tax: simple_vat
+features:
+  invoice: true
+channels_preset: gb

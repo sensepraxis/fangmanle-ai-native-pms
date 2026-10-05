@@ -1,0 +1,4 @@
+-- SPDX-License-Identifier: Apache-2.0
+-- 本文件已合并进 001_core_schema.sql（由 fml_seed 经 pg_dump --schema-only 生成）。
+-- 保留空文件仅为兼容 db/postgres/docker-init.sh 的 01_ddl/*.sql 通配加载顺序。
+-- 如确需拆分，请基于 001 重新派生，勿与本文件重复定义表。

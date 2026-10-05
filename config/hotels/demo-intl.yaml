@@ -1,0 +1,30 @@
+# 酒店组装配置（非国情包）。启动: deploy\dev\start.bat demo-intl
+id: demo-intl
+locale: en
+aliases:
+- intl
+- international
+- global
+currency: USD
+tax: noop
+system:
+  private_channel: true
+  wecom: false
+  llm: true
+  map: true
+  finance: true
+  room_types: true
+  rooms: true
+  users: true
+  rbac: true
+vendors:
+  map: noop
+  messaging:
+    primary: whatsapp
+    fallback: [sms, email]
+    packs: [private_ops_core]
+  llm: ollama
+  tax: noop
+features:
+  invoice: false
+channels_preset: intl

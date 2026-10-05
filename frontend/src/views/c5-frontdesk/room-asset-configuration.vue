@@ -1,0 +1,17 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<script setup lang="ts">
+import { t } from '../../lib/i18n'
+
+/** 旧路径兼容：房间资源配置 → 系统配置 · 房型管理 */
+import { onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+onMounted(() => {
+  router.replace('/a-ai-core/room-type-management')
+})
+</script>
+
+<template>
+  <p style="padding: 24px; color: var(--on-surface-variant)">{{ t('正在跳转到「房型管理」…') }}</p>
+</template>

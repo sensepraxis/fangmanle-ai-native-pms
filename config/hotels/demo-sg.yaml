@@ -1,0 +1,33 @@
+# 酒店组装配置（非国情包）。启动: deploy\dev\start.bat demo-sg
+id: demo-sg
+locale: en
+aliases:
+- sg
+- singapore
+- sgp
+currency: SGD
+tax:
+  name: gst
+  rate: 0.09
+system:
+  # 显示「私域通道」Tab（内容按 LINE，非企微专属页）
+  private_channel: true
+  wecom: false
+  llm: true
+  map: true
+  finance: true
+  room_types: true
+  rooms: true
+  users: true
+  rbac: true
+vendors:
+  map: google
+  messaging:
+    primary: line
+    fallback: [sms, email]
+    packs: [private_ops_core]
+  llm: openai_compatible
+  tax: simple_vat
+features:
+  invoice: true
+channels_preset: sg

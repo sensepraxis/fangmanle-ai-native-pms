@@ -1,0 +1,14 @@
+Fangmanle AI Native PMS (OpenCore)
+Copyright 2026 上海感物知行科技有限公司
+
+This product includes software developed by SensePraxis (Shanghai).
+
+The OpenCore portions of this repository (everything outside src/commercial/,
+unless a file states otherwise) are licensed under the Apache License, Version 2.0.
+A copy of the license is in LICENSE.
+
+src/commercial/ is licensed under Business Source License 1.1 (LICENSE-BUSL)
+and is not Apache Software.
+
+Third-party notices, if required by bundled dependencies, should be listed below
+or in the corresponding dependency metadata.

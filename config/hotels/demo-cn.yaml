@@ -1,0 +1,28 @@
+# 酒店组装配置（非国情包）。启动: deploy\dev\start.bat demo-cn
+id: demo-cn
+locale: zh-CN
+aliases:
+- cn
+- china
+currency: CNY
+system:
+  private_channel: true
+  wecom: true
+  llm: true
+  map: true
+  finance: true
+  room_types: true
+  rooms: true
+  users: true
+  rbac: true
+vendors:
+  map: tianditu
+  messaging:
+    primary: wecom
+    fallback: [sms]
+    packs: [private_ops_core, wecom_deep]
+  llm: ollama
+  tax: fapiao
+features:
+  invoice: true
+channels_preset: cn

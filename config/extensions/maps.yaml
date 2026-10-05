@@ -1,0 +1,25 @@
+# 地图扩展目录：id → 实现类（全限定名）。
+# 出货选型在 config/hotels/<id>.yaml 的 vendors.map；运行时可由 AppSetting.map 覆盖。
+# 引擎读取本文件动态 import，业务代码只依赖 extensions.map.IMap。
+
+providers:
+  tianditu:
+    class: extensions.map.impl.tianditu.TiandituMap
+    label: 天地图
+  gaode:
+    class: extensions.map.impl.gaode.GaodeMap
+    label: 高德地图
+    aliases: [amap]
+  baidu:
+    class: extensions.map.impl.baidu.BaiduMap
+    label: 百度地图
+  google:
+    class: extensions.map.impl.google.GoogleMap
+    label: Google Maps
+  noop:
+    class: extensions.map.impl.noop.NoopMap
+    label: 手工坐标
+    aliases: [none, off, manual]
+
+# 未知 vendors.map 时的回退
+fallback: noop

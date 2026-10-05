@@ -1,0 +1,31 @@
+# 酒店组装配置（非国情包）。启动: deploy\dev\start.bat demo-th
+id: demo-th
+locale: en
+aliases:
+- th
+- thailand
+currency: THB
+tax:
+  name: vat_th
+  rate: 0.07
+system:
+  private_channel: true
+  wecom: false
+  llm: true
+  map: true
+  finance: true
+  room_types: true
+  rooms: true
+  users: true
+  rbac: true
+vendors:
+  map: google
+  messaging:
+    primary: line
+    fallback: [sms, email]
+    packs: [private_ops_core]
+  llm: openai_compatible
+  tax: simple_vat
+features:
+  invoice: true
+channels_preset: th

@@ -1,0 +1,27 @@
+name: Feature
+description: 功能建议（OpenCore 或文档）
+title: "[feat] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 要解决什么
+    validations:
+      required: true
+  - type: dropdown
+    id: layer
+    attributes:
+      label: 建议落在哪一层
+      options:
+        - OpenCore（Apache-2.0）
+        - Commercial Core（BUSL，需许可讨论）
+        - 文档 / CI / 酒店 YAML
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 建议方案
+    validations:
+      required: true

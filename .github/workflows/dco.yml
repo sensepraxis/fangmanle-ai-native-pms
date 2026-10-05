@@ -1,0 +1,17 @@
+name: DCO
+
+on:
+  pull_request:
+    branches: [main, master]
+
+permissions: {}
+
+jobs:
+  check:
+    name: Signed-off-by
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - uses: KineticCafe/actions-dco@v3.2.0

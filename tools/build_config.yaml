@@ -1,0 +1,47 @@
+# ============================================================
+# 房满乐 · 离线构建工具配置
+# 运行： python tools/build_tool.py --config tools/build_config.yaml --mode demo
+# 说明： 所有路径支持 / 或 \\；本机运行（Windows + PowerShell）。
+#
+# 【OpenCore】本项目无任何商业 License 签发 / 校验逻辑。
+# ============================================================
+
+project:
+  # 源码根目录（fangmanle-ai-native-pms）。
+  # 默认：相对仓库根向上两层的 fangmanle-ai-native-pms（默认即正确，无需修改）；
+  # 也可以写绝对路径（如果你克隆到了别处）。
+  # 实际值由 build_tool.py 计算：<repo>/../<repo-name>
+  source_root: "../"
+  # 应用镜像名与版本号（docker build -t <image_name>:<image_tag> .）
+  image_name: "fangmanle-pms"
+  image_tag: "1.0.0"
+  # Postgres 离线镜像（与镜像内 Dockerfile / compose 一致）
+  postgres_image: "postgres:16-alpine"
+
+# 默认模式：demo（含样例数据）或 hotel（仅 DDL + 初始化，无样例数据）。
+# CLI 的 --mode 会覆盖此项。
+mode: "demo"
+
+# 打包相关
+pack:
+  # 是否调用本仓库 deploy/pack.ps1 组装离线目录（步骤 4，db 源来自 project.source_root）
+  use_pack_ps1: true
+  # true  => 工具传 -SkipSave 给 pack.ps1（只组目录），再由工具自己 docker save 导出镜像 tar
+  # false => 直接交给 pack.ps1 执行 docker save / docker pull（需要 Docker 与网络）
+  export_images: true
+
+# 部署目标平台（影响安装入口脚本）
+# auto   => 同时生成 install.sh(bash) 与 install.ps1(PowerShell)，部署时按目标平台挑一个跑
+# linux  => 仅生成 install.sh
+# windows=> 仅生成 install.ps1（Windows Docker Desktop 原生 PowerShell）
+# 说明：docker-compose.yml 本身已跨平台（named volume + 相对 bind mount），与 OS 无关。
+deploy:
+  target: "auto"
+
+# 输出
+output:
+  # 最终物料包目录。留空 => 使用 pack.ps1 的产出位置：<repo>/deploy/offline-dist/<mode>
+  dir: ""
+  # 构建报告文件名（写到物料包目录内）
+  report: "build_report.md"
+  manifest: "build_manifest.json"

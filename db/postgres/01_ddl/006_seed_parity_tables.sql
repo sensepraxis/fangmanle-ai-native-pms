@@ -1,0 +1,3 @@
+-- SPDX-License-Identifier: Apache-2.0
+-- mkt_customer_notes / webhook_event_logs 已随 001_core_schema.sql（由 fml_seed 生成）一并建立，
+-- 无需在此重复定义。保留空文件仅为兼容 docker-init.sh 的 01_ddl/*.sql 通配加载顺序。

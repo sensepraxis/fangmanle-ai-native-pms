@@ -1,0 +1,28 @@
+# 酒店组装配置（非国情包）。启动: deploy\dev\start.bat demo-vn
+id: demo-vn
+locale: en
+aliases:
+- vn
+- vietnam
+currency: VND
+tax:
+  name: vat_vn
+  rate: 0.1
+system:
+  private_channel: true
+  wecom: false
+  llm: true
+  map: true
+  finance: true
+  room_types: true
+  rooms: true
+  users: true
+  rbac: true
+vendors:
+  map: google
+  messaging: line
+  llm: openai_compatible
+  tax: simple_vat
+features:
+  invoice: true
+channels_preset: vn

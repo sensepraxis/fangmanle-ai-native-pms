@@ -1,0 +1,4 @@
+# 维护团队：上海感物知行科技有限公司
+# Fork 后请改成你们自己的 GitHub 用户/团队，否则 CODEOWNERS 审查请求会打到上游。
+*       @sensepraxis
+src/commercial/ @sensepraxis

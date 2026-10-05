@@ -1,0 +1,15 @@
+# 税票 / 税务凭证扩展目录：id → 实现类
+providers:
+  fapiao:
+    class: extensions.tax.impl.fapiao.FapiaoTax
+    label: 中国数电票
+  simple_vat:
+    class: extensions.tax.impl.simple_vat.SimpleVatTax
+    label: 价内增值税/GST
+    aliases: [vat, gst]
+  noop:
+    class: extensions.tax.impl.noop.NoopTax
+    label: 无税票
+    aliases: [off, none]
+
+fallback: noop

@@ -1,0 +1,49 @@
+name: Question
+description: Usage, install, licensing — not a bug or feature request
+title: "[q] "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ask how to run or understand Fangmanle PMS. Do **not** use this form for defects (Bug) or new work (Feature).
+        Security reports: [SECURITY.md](../SECURITY.md). Commercial Core licensing: `commercial@fangmanle.com` ([LICENSING.md](../LICENSING.md)).
+
+        用法 / 安装 / 许可类问题。缺陷请用 Bug，新功能请用 Feature。安全问题见 SECURITY.md。
+  - type: textarea
+    id: question
+    attributes:
+      label: Question / 问题
+      description: What are you trying to do, and what is unclear?
+    validations:
+      required: true
+  - type: dropdown
+    id: topic
+    attributes:
+      label: Topic / 主题
+      options:
+        - Install / start (`deploy/dev`, Docker)
+        - OpenCore vs Commercial Core / licensing
+        - Config (hotel YAML, env, SQLite vs PostgreSQL)
+        - API / architecture
+        - Docs or i18n
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: tried
+    attributes:
+      label: What you already read / tried
+      description: README, INSTALL.md, FAQ.md, logs, commands. 已读文档与已尝试步骤。
+    validations:
+      required: true
+  - type: dropdown
+    id: pack
+    attributes:
+      label: Path / 路径
+      options:
+        - OpenCore (`FML_COMMERCIAL=0` or no commercial pack)
+        - With Commercial Core
+        - Not sure
+    validations:
+      required: true

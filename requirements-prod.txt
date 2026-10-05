@@ -1,0 +1,21 @@
+# 生产 / Docker 镜像依赖（PostgreSQL / SQLite 双支持）
+#
+# 精简开发依赖见 pyproject extras：pip install -e ".[postgres,gmssl,dev]"
+# 本文件为部署锁版本。
+# 锁定策略：本文件为「部署锁版本」——各包已固定 == 版本以避免依赖漂移导致复现失败。
+#   若需重新解析依赖，可运行以下任一方式生成新锁：
+#     1) pip-compile（推荐）：pip install pip-tools && pip-compile requirements-prod.txt -o requirements.lock
+#     2) 当前环境固化：    pip freeze > requirements.lock
+#   解析后请将新的 == 版本回填到本文件；请勿改回 >=，否则失去锁定意义。
+#
+# 注意：gmssl 为纯 Python 国密库（SM2/SM3/SM4），请勿误装未维护的同名包 gmssl-py。
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+sqlalchemy==2.0.36
+psycopg[binary]==3.2.3
+cryptography==44.0.0
+pydantic==2.10.4
+httpx==0.28.1
+python-multipart==0.0.20
+gmssl==3.2.2
+pyyaml>=6.0.3

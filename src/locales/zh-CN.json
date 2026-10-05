@@ -1,0 +1,139 @@
+{
+  "nav": {
+    "overview": "经营总览",
+    "orders": "订单管理",
+    "rooms": "房务与房态",
+    "crm": "客户会员",
+    "analytics": "数据洞察",
+    "finance": "财务管理",
+    "mkt": "私域运营",
+    "system": "系统配置",
+    "extensions": "扩展能力"
+  },
+  "common": {
+    "save": "保存",
+    "cancel": "取消",
+    "confirm": "确认",
+    "delete": "删除",
+    "search": "搜索",
+    "loading": "加载中",
+    "logout": "退出登录",
+    "login": "登录",
+    "notifications": "通知",
+    "manager": "店长",
+    "logged_out": "已退出登录",
+    "language": "语言",
+    "success": "成功",
+    "failed": "失败",
+    "retry": "重试",
+    "back": "返回",
+    "more": "更多",
+    "all": "全部",
+    "yes": "是",
+    "no": "否",
+    "unknown": "未知",
+    "detail": "详情",
+    "edit": "编辑",
+    "create": "新建",
+    "refresh": "刷新",
+    "export": "导出",
+    "import": "导入",
+    "settings": "设置",
+    "help": "帮助",
+    "no_data": "暂无数据"
+  },
+  "auth": {
+    "username": "用户名",
+    "password": "密码",
+    "hotel": "酒店",
+    "sign_in": "登录系统",
+    "welcome": "欢迎回来"
+  },
+  "deposit": {
+    "form": {
+      "PREAUTH_CARD": "银行卡预授权",
+      "WECHAT_DEPOSIT": "微信押金",
+      "ALIPAY_DEPOSIT": "支付宝押金",
+      "CASH": "现金",
+      "AR": "企业挂账"
+    },
+    "status": {
+      "CREATED": "待收押",
+      "FROZEN": "在押",
+      "PARTIAL_CAPTURE": "扣减中",
+      "EXPIRED": "失效",
+      "DISPUTED": "争议",
+      "RELEASED": "已释放",
+      "RELEASED_AFTER_CAPTURE": "扣减后释放",
+      "CAPTURED": "全额扣减"
+    }
+  },
+  "channel": {
+    "wechat": "微信",
+    "wecom": "企微",
+    "ctrip": "携程",
+    "meituan": "美团",
+    "fliggy": "飞猪",
+    "douyin": "抖音",
+    "xiaohongshu": "小红书",
+    "official": "官网",
+    "walkin": "散客",
+    "ota": "OTA",
+    "agreement": "协议客户",
+    "direct": "直订",
+    "system": "系统",
+    "unknown": "未知渠道"
+  },
+  "error": {
+    "not_found": "资源不存在",
+    "rule_not_found": "规则不存在",
+    "order_not_found": "关联订单不存在",
+    "deposit_not_found": "押金单不存在",
+    "handover_not_found": "交班记录不存在",
+    "batch_not_found": "券批次不存在",
+    "invalid_state": "非法状态",
+    "need_plan": "缺少 plan",
+    "need_selection": "请至少勾选一项再确认",
+    "need_name": "请填写规则名称",
+    "need_event": "请选择触发事件",
+    "need_coupon": "请至少选择一张券批次",
+    "archived": "已归档不可生成 AI 草稿",
+    "login_required": "请先登录"
+  },
+  "domain": {
+    "ai_core": "AI 中台",
+    "data": "数据底座",
+    "revenue": "收益管理",
+    "risk": "风控预警",
+    "acquisition": "获客种草",
+    "reputation": "口碑传播",
+    "frontdesk": "前台接待",
+    "housekeeping": "客房服务",
+    "supplies": "物资耗材",
+    "assets": "固定资产",
+    "finance": "财务中心",
+    "multiformat": "多形态多门店"
+  },
+  "orders": {
+    "hub": "订单中心",
+    "arrivals": "预抵",
+    "inhouse": "在住",
+    "departures": "预离",
+    "search": "订单搜索",
+    "stay_status": "入住状态",
+    "pay_status": "结账状态"
+  },
+  "finance": {
+    "ar": {
+      "doc_corp": "企业挂账",
+      "doc_order": "挂账 · 订单 {order_no}",
+      "doc_ota": "{month} 月 · {ch} · {n} 单",
+      "doc_commission": "{month} 月佣金"
+    },
+    "shift": {
+      "overage": "长款",
+      "shortage": "短款",
+      "balanced": "对平"
+    }
+  }
+}
