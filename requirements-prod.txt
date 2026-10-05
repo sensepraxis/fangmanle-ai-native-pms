@@ -9,7 +9,7 @@
 #   解析后请将新的 == 版本回填到本文件；请勿改回 >=，否则失去锁定意义。
 #
 # 注意：gmssl 为纯 Python 国密库（SM2/SM3/SM4），请勿误装未维护的同名包 gmssl-py。
-fastapi==0.115.6
+fastapi==0.142.2
 uvicorn[standard]==0.34.0
 sqlalchemy==2.0.36
 psycopg[binary]==3.2.3
