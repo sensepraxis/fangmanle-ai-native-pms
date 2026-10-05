@@ -2,11 +2,11 @@
 
 [English](CHANGELOG.md) · **简体中文**
 
-本仓库当前版本：**0.1.0-alpha**。以 git tag `v0.1.0-alpha`（发布时打上）与本文件对照；未打 tag 前以 `main` 最新提交为准。
+本仓库当前版本：**1.0.0**。以 git tag `v1.0.0`（发布时打上）与本文件对照；未打 tag 前以 `main` 最新提交为准。
 
 格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)。
 
-## [0.1.0-alpha] - 2026-10-04
+## [1.0.0] - 2026-10-06
 
 ### Added
 

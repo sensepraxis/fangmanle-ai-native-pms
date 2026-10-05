@@ -2,7 +2,7 @@
 
 **English** · [简体中文](README_zh.md)
 
-**Fangmanle PMS** is an **AI-native hotel PMS** (property management system): **open source**, **self-hosted**, one process per hotel. Assemble operations from a **hotel YAML** plus **pluggable extensions** (maps, LLM, private-domain messaging, tax). Version **0.1.0-alpha** — [CHANGELOG.md](CHANGELOG.md).
+**Fangmanle PMS** is an **AI-native hotel PMS** (property management system): **open source**, **self-hosted**, one process per hotel. Assemble operations from a **hotel YAML** plus **pluggable extensions** (maps, LLM, private-domain messaging, tax). Version **1.0.0** — [CHANGELOG.md](CHANGELOG.md).
 
 ## What is Fangmanle PMS?
 
@@ -117,8 +117,8 @@ One hotel YAML selects channel seeds and vendors. HTTP stays `router → applica
 
 | Horizon | Intent |
 |---------|--------|
-| **0.1.x-alpha** | Doc/i18n completeness, coverage gates (see [docs/COVERAGE.md](docs/COVERAGE.md)), more hotel YAML packs |
-| **0.2** | Production hardening (rotate demo JWT/passwords by default, PG-first ops) |
+| **1.0.x** | Doc/i18n completeness, coverage gates (see [docs/COVERAGE.md](docs/COVERAGE.md)), more hotel YAML packs |
+| **1.1** | Production hardening (rotate demo JWT/passwords by default, PG-first ops) |
 | **Out of scope** | Multi-brand SaaS in one process |
 
 Track shipped work in [CHANGELOG.md](CHANGELOG.md).

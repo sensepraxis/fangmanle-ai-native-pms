@@ -34,6 +34,6 @@ body:
     id: version
     attributes:
       label: 版本 / commit
-      description: 例如 0.1.0-alpha 或 git SHA。可跟 CHANGELOG。
+      description: 例如 1.0.0 或 git SHA。可跟 CHANGELOG。
     validations:
       required: true

@@ -7,7 +7,7 @@
 | Core domain packages (`orders`, `rooms`, `hk`, `finance`, `guests`, `application`) | **≥ 60%** line coverage |
 | Public HTTP API (`src/routers/` + `src/api.py`) | **100%** unit tests over time |
 
-These are **release goals**, not a hard CI fail-under on day one of 0.1.0-alpha. GitHub Actions runs `pytest --cov` and uploads `coverage.xml`. Raise `fail_under` in `[tool.coverage.report]` when the numbers are honest.
+These are **release goals**, not a hard CI fail-under on day one of 1.0.0. GitHub Actions runs `pytest --cov` and uploads `coverage.xml`. Raise `fail_under` in `[tool.coverage.report]` when the numbers are honest.
 
 ## Local
 
