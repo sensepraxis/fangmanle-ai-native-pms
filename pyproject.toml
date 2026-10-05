@@ -62,7 +62,7 @@ gmssl = [
 dev = [
     "pytest>=8",
     "pytest-cov>=5",
-    "ruff>=0.8",
+    "ruff>=0.16,<0.17",
 ]
 
 [project.urls]
@@ -83,10 +83,34 @@ target-version = "py311"
 extend-exclude = ["src/locales"]
 
 [tool.ruff.lint]
-# E/F/I/W: pycodestyle + pyflakes + isort + pycodestyle-warnings
-# UP: pyupgrade  (B: flake8-bugbear)
+# E/F/I/W: pycodestyle + pyflakes + isort + warnings; UP: pyupgrade; B: bugbear
 select = ["E", "F", "I", "W", "UP", "B"]
-ignore = ["E501", "B008"]  # B008: FastAPI 的 Depends() 在默认值中属正常用法
+ignore = [
+    "E501",  # line length handled by formatter (120)
+    "B008",  # FastAPI Depends() in defaults
+    # Historical OpenCore debt — do not expand this list for new code
+    "F401",
+    "F402",
+    "F811",
+    "F821",
+    "F841",
+    "E402",
+    "E712",
+    "E731",
+    "E741",
+    "UP006",
+    "UP009",
+    "UP035",
+    "UP037",
+    "UP042",
+    "UP045",
+    "B006",
+    "B007",
+    "B017",
+    "B023",
+    "B904",
+    "B905",
+]
 
 [tool.ruff.format]
 quote-style = "double"

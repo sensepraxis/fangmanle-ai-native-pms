@@ -187,8 +187,7 @@ def index():
     if not os.path.isfile(index_html):
         raise HTTPException(
             503,
-            "Frontend is not built (missing frontend/dist or src/static). "
-            "Run the Vite build or deploy/dev/start.*",
+            "Frontend is not built (missing frontend/dist or src/static). Run the Vite build or deploy/dev/start.*",
         )
     return FileResponse(
         index_html,
