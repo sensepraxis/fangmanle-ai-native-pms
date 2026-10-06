@@ -2,6 +2,13 @@
 
 [English](README.md) · **简体中文**
 
+[![License: Apache-2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+[![License: BUSL-1.1](https://img.shields.io/badge/license-BUSL--1.1-orange.svg)](LICENSE-BUSL)
+[![Version](https://img.shields.io/github/v/release/sensepraxis/fangmanle-ai-native-pms?label=version)](https://github.com/sensepraxis/fangmanle-ai-native-pms/releases)
+[![Build](https://img.shields.io/github/actions/workflow/status/sensepraxis/fangmanle-ai-native-pms/ci.yml?branch=main&label=build)](https://github.com/sensepraxis/fangmanle-ai-native-pms/actions/workflows/ci.yml)
+[![Coverage](https://img.shields.io/badge/coverage-pytest--cov-informational.svg)](docs/COVERAGE.md)
+[![Stars](https://img.shields.io/github/stars/sensepraxis/fangmanle-ai-native-pms?style=flat)](https://github.com/sensepraxis/fangmanle-ai-native-pms/stargazers)
+
 **房满乐 PMS** 是一套 **AI 原生（AI-native）酒店 PMS**： **开源（open source）**、**可自托管（self-hosted）**、一个进程服务一家店。用 **酒店 YAML + 可插拔 Extensions**（地图 / LLM / 私域通道 / 税票）组装前台与运营。版本 **1.0.0** — [CHANGELOG_zh.md](CHANGELOG_zh.md)。
 
 ## 这是什么？（What is Fangmanle PMS?）
@@ -237,4 +244,4 @@ DATABASE_URL="sqlite:///./tmp/ci_test.db" pytest src/tests -q
 说明、范围划分与边界图见 [`LICENSING_zh.md`](LICENSING_zh.md)。  
 商业版核心代码在 [`src/commercial/`](src/commercial/)（LLM 基座 + 各域 AI 场景）。fork 可去掉该目录后单独启动 OpenCore。  
 「房满乐」等商标政策见 [`TRADEMARK_zh.md`](TRADEMARK_zh.md)（协议只管代码，不管商标；**fork 不可沿用「房满乐」品牌**）。  
-商业授权：`commercial@fangmanle.com`。
+商业授权：`contact@sensepraxis.com`。

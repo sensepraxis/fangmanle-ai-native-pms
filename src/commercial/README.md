@@ -27,4 +27,4 @@
 
 经营快照、意图目录、确定性查询与规则 anomalies 在 OpenCore `analytics.ask_*`。交班客情/待办规则展示在 OpenCore `finance.shift_handover_service.task_service`。OpenCore 经 `infra.commercial_pack` 惰性加载本包；无本目录时 API 仍可启动。
 
-生产使用前请联系：`commercial@fangmanle.com` / `contact@sensepraxis.com`
+生产使用前请联系：`contact@sensepraxis.com`

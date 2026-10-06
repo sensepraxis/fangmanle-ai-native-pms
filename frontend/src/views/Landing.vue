@@ -7,7 +7,7 @@ import { getLocale, setLocale, type Locale } from '../lib/i18n'
 import { api } from '../lib/api'
 import { firstAllowedHome } from '../store/rbac'
 
-const CONTACT_EMAIL = 'weiweiw404@gmail.com'
+const CONTACT_EMAIL = 'contact@sensepraxis.com'
 const MAILTO = `mailto:${CONTACT_EMAIL}`
 
 const router = useRouter()

@@ -86,7 +86,7 @@ From [`LICENSE-BUSL`](LICENSE-BUSL):
 - **Change Date:** `2030-10-04`
 - **Change License:** Apache License, Version 2.0
 
-Sales: `commercial@fangmanle.com` or `contact@sensepraxis.com`.
+Sales: `contact@sensepraxis.com`.
 
 ---
 
