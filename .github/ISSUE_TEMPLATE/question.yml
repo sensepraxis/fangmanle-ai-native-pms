@@ -7,7 +7,7 @@ body:
     attributes:
       value: |
         Ask how to run or understand Fangmanle PMS. Do **not** use this form for defects (Bug) or new work (Feature).
-        Security reports: [SECURITY.md](../SECURITY.md). Commercial Core licensing: `commercial@fangmanle.com` ([LICENSING.md](../LICENSING.md)).
+        Security reports: [SECURITY.md](../SECURITY.md). Commercial Core licensing: `contact@sensepraxis.com` ([LICENSING.md](../LICENSING.md)).
 
         用法 / 安装 / 许可类问题。缺陷请用 Bug，新功能请用 Feature。安全问题见 SECURITY.md。
   - type: textarea

@@ -58,7 +58,7 @@
 
 商标授权或品牌合作请联系：
 
-- `weiweiw404@gmail.com`
+- `contact@sensepraxis.com`
 
 
 ---

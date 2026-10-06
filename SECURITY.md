@@ -21,7 +21,7 @@ Fixes land on `main` first and ship with the next release.
 
 **Do not** open a public issue for an unpatched vulnerability.
 
-- Email: **weiweiw404@gmail.com** (fallback: GitHub private security advisory / maintainer DM)
+- Email: **contact@sensepraxis.com** (fallback: GitHub private security advisory / maintainer DM)
 - Include: affected version and backend (SQLite / PostgreSQL), repro steps, impact, suggested fix if you have one
 
 We acknowledge within **72 hours** and share a timeline after we confirm the issue. We stay in contact until a fix is published.

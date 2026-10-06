@@ -52,7 +52,7 @@ That is **not** a trademark license.
 
 Only SensePraxis and written licensees may use these marks in products, services, domains, and marketing.
 
-Contact: `weiweiw404@gmail.com`
+Contact: `contact@sensepraxis.com`
 
 ---
 

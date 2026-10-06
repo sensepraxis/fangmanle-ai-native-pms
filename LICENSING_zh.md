@@ -86,7 +86,7 @@ flowchart TB
 - **Change Date**：`2030-10-04`
 - **Change License**：Apache License, Version 2.0
 
-商业授权 / 部署咨询：`commercial@fangmanle.com` 或 `contact@sensepraxis.com`。
+商业授权 / 部署咨询：`contact@sensepraxis.com`。
 
 ---
 

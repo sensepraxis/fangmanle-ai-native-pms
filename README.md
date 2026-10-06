@@ -2,6 +2,13 @@
 
 **English** · [简体中文](README_zh.md)
 
+[![License: Apache-2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+[![License: BUSL-1.1](https://img.shields.io/badge/license-BUSL--1.1-orange.svg)](LICENSE-BUSL)
+[![Version](https://img.shields.io/github/v/release/sensepraxis/fangmanle-ai-native-pms?label=version)](https://github.com/sensepraxis/fangmanle-ai-native-pms/releases)
+[![Build](https://img.shields.io/github/actions/workflow/status/sensepraxis/fangmanle-ai-native-pms/ci.yml?branch=main&label=build)](https://github.com/sensepraxis/fangmanle-ai-native-pms/actions/workflows/ci.yml)
+[![Coverage](https://img.shields.io/badge/coverage-pytest--cov-informational.svg)](docs/COVERAGE.md)
+[![Stars](https://img.shields.io/github/stars/sensepraxis/fangmanle-ai-native-pms?style=flat)](https://github.com/sensepraxis/fangmanle-ai-native-pms/stargazers)
+
 **Fangmanle PMS** is an **AI-native hotel PMS** (property management system): **open source**, **self-hosted**, one process per hotel. Assemble operations from a **hotel YAML** plus **pluggable extensions** (maps, LLM, private-domain messaging, tax). Version **1.0.0** — [CHANGELOG.md](CHANGELOG.md).
 
 ## What is Fangmanle PMS?
@@ -135,4 +142,4 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) (PR + Conventional Commits). Secu
 
 Dual license: OpenCore [Apache-2.0](LICENSE) · commercial AI [BUSL-1.1](LICENSE-BUSL). See [LICENSING.md](LICENSING.md) and [NOTICE](NOTICE).  
 Trademarks are **not** licensed with the code: [TRADEMARK.md](TRADEMARK.md). Forks must not keep the **房满乐 / Fangmanle** product brand.  
-Commercial licensing: `commercial@fangmanle.com`.
+Commercial licensing: `contact@sensepraxis.com`.
