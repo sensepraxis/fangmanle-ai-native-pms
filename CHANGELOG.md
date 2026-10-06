@@ -1,11 +1,11 @@
 # Changelog
 
-Current version: **0.1.0-alpha**. Pair this file with git tag `v0.1.0-alpha` when that tag exists; until then, `main` is the source of truth.
+Current version: **1.0.0**. Pair this file with git tag `v1.0.0` when that tag exists; until then, `main` is the source of truth.
 
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).  
 Chinese copy: [CHANGELOG_zh.md](CHANGELOG_zh.md).
 
-## [0.1.0-alpha] - 2026-10-04
+## [1.0.0] - 2026-10-06
 
 ### Added
 

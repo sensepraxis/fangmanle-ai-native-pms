@@ -47,7 +47,7 @@ FML_COMMERCIAL=0 pytest src/tests -q -m "not commercial"
 cd frontend && npm run lint && npm run format:check && npm run typecheck
 ```
 
-- 版本跟踪看根目录 [CHANGELOG_zh.md](CHANGELOG_zh.md)（当前 **0.1.0-alpha**）；发布时打 git tag `v0.1.0-alpha`。
+- 版本跟踪看根目录 [CHANGELOG_zh.md](CHANGELOG_zh.md)（当前 **1.0.0**）；发布时打 git tag `v1.0.0`。
 - 依赖漏洞扫描走 GitHub Dependabot（`.github/dependabot.yml`）。
 - Issue / PR 请用 `.github` 模板。Fork 后改 `pyproject.toml` `[project.urls]` 与 `.github/CODEOWNERS`。
 
