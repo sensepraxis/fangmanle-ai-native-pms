@@ -5,7 +5,16 @@ CI gates, i18n checks, and the offline build toolchain. Product start is `deploy
 ```bash
 python tools/check_router_layer.py
 python tools/ci_opencore_smoke.py
+python tools/sync_website_docs.py   # refresh website/* from INSTALL / ARCHITECTURE / FAQ
 python tools/build_tool.py --mode demo
+```
+
+Docs site (MkDocs Material → GitHub Pages): see root `mkdocs.yml`, `website/`, `requirements-docs.txt`. Local preview:
+
+```bash
+pip install -r requirements-docs.txt
+python tools/sync_website_docs.py
+python -m mkdocs serve
 ```
 
 ---

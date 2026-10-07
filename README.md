@@ -8,6 +8,9 @@
 [![Build](https://img.shields.io/github/actions/workflow/status/sensepraxis/fangmanle-ai-native-pms/ci.yml?branch=main&label=build)](https://github.com/sensepraxis/fangmanle-ai-native-pms/actions/workflows/ci.yml)
 [![Coverage](https://img.shields.io/badge/coverage-pytest--cov-informational.svg)](docs/COVERAGE.md)
 [![Stars](https://img.shields.io/github/stars/sensepraxis/fangmanle-ai-native-pms?style=flat)](https://github.com/sensepraxis/fangmanle-ai-native-pms/stargazers)
+[![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-blue.svg)](https://sensepraxis.github.io/fangmanle-ai-native-pms/)
+
+**Docs:** [sensepraxis.github.io/fangmanle-ai-native-pms](https://sensepraxis.github.io/fangmanle-ai-native-pms/) (Quick Start · Architecture · FAQ)
 
 **Fangmanle PMS** is an **AI-native hotel PMS** (property management system): **open source**, **self-hosted**, one process per hotel. Assemble operations from a **hotel YAML** plus **pluggable extensions** (maps, LLM, private-domain messaging, tax). Version **1.0.0** — [CHANGELOG.md](CHANGELOG.md).
 
