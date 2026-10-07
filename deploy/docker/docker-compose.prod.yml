@@ -40,7 +40,7 @@ services:
     build:
       context: ../..
       dockerfile: deploy/docker/Dockerfile
-    image: fangmanle-pms:1.0.0
+    image: fangmanle-pms:1.0.1
     container_name: fangmanle-pms-prod
     restart: unless-stopped
     depends_on:

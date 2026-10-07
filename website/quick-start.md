@@ -29,7 +29,7 @@ Change hotel, passwords, JWT, ports, and map keys **in the compose file** (`FML_
 Image:
 
 ```bash
-docker build -f deploy/docker/Dockerfile -t fangmanle-pms:1.0.0 .
+docker build -f deploy/docker/Dockerfile -t fangmanle-pms:1.0.1 .
 ```
 
 ### What is in Compose

@@ -42,7 +42,7 @@ FML_COMMERCIAL=0 pytest src/tests -q -m "not commercial"
 cd frontend && npm run lint && npm run format:check && npm run typecheck
 ```
 
-- Versioning: [CHANGELOG.md](CHANGELOG.md) (now **1.0.0**); release tag `v1.0.0`.
+- Versioning: [CHANGELOG.md](CHANGELOG.md) (now **1.0.1**); release tag `v1.0.1`.
 - Dependency alerts: GitHub Dependabot (`.github/dependabot.yml`).
 - After a fork, update `pyproject.toml` `[project.urls]` and `.github/CODEOWNERS`.
 - `conftest.py` pins tests to a temp SQLite DB and seeds a minimal hotel. No database server required.
