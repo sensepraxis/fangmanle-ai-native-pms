@@ -27,6 +27,7 @@ services:
       POSTGRES_USER: ${{POSTGRES_USER:-fangmanle}}
       POSTGRES_PASSWORD: ${{POSTGRES_PASSWORD:-change-me}}
       POSTGRES_DB: ${{POSTGRES_DB:-fangmanle}}
+      # Offline pack flattens SQL under ./db; repo compose uses /db/postgres.
       FML_DB_ROOT: /db
       # {mode} 版{skip_note}
       FML_DB_SKIP_DEMO: "{skip_demo}"
