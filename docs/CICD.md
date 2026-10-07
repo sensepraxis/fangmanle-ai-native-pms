@@ -7,6 +7,7 @@ Workflows under `.github/workflows/`:
 | File | When | Jobs |
 |------|------|------|
 | `ci.yml` | push/PR to `main` | Ruff check+format, router/SPDX/i18n, pytest + coverage, OpenCore matrix, ESLint/Prettier, vue-tsc/build, OpenAPI artifact |
+| `docs.yml` | push/PR to `main` | MkDocs Material → GitHub Pages (`website/` + sync from `INSTALL` / `ARCHITECTURE` / `FAQ`) |
 | `dco.yml` | PR to `main` | Each commit has a DCO `Signed-off-by` trailer |
 | `release.yml` | tags `v*` | GitHub Release notes from CHANGELOG |
 

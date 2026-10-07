@@ -109,3 +109,6 @@ coverage/
 .dev-logs/
 .dev-pids/
 
+# MkDocs build output
+/site/
+
