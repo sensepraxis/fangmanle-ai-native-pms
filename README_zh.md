@@ -9,10 +9,23 @@
 [![Coverage](https://img.shields.io/badge/coverage-pytest--cov-informational.svg)](docs/COVERAGE.md)
 [![Stars](https://img.shields.io/github/stars/sensepraxis/fangmanle-ai-native-pms?style=flat)](https://github.com/sensepraxis/fangmanle-ai-native-pms/stargazers)
 [![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-blue.svg)](https://sensepraxis.github.io/fangmanle-ai-native-pms/)
+[![在线演示](https://img.shields.io/badge/demo-pms.sensepraxis.com-brightgreen.svg)](https://pms.sensepraxis.com/)
 
 **文档站：** [sensepraxis.github.io/fangmanle-ai-native-pms](https://sensepraxis.github.io/fangmanle-ai-native-pms/)（Quick Start · Architecture · FAQ）
 
 **房满乐 PMS** 是一套 **AI 原生（AI-native）酒店 PMS**： **开源（open source）**、**可自托管（self-hosted）**、一个进程服务一家店。用 **酒店 YAML + 可插拔 Extensions**（地图 / LLM / 私域通道 / 税票）组装前台与运营。版本 **1.0.0** — [CHANGELOG_zh.md](CHANGELOG_zh.md)。
+
+### 在线演示
+
+先点开看效果（含样例客人 / 房态 / 订单，会定期重灌）：
+
+| | |
+|--|--|
+| **地址** | [https://pms.sensepraxis.com/](https://pms.sensepraxis.com/) |
+| **账号** | `admin` / `admin123` |
+| **说明** | 仅作公开演示，正式部署请立刻改密码与 JWT |
+
+本机自建见下文「本地启动指南」或 [INSTALL.md](INSTALL.md)。
 
 ## 这是什么？（What is Fangmanle PMS?）
 

@@ -9,10 +9,23 @@
 [![Coverage](https://img.shields.io/badge/coverage-pytest--cov-informational.svg)](docs/COVERAGE.md)
 [![Stars](https://img.shields.io/github/stars/sensepraxis/fangmanle-ai-native-pms?style=flat)](https://github.com/sensepraxis/fangmanle-ai-native-pms/stargazers)
 [![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-blue.svg)](https://sensepraxis.github.io/fangmanle-ai-native-pms/)
+[![Live Demo](https://img.shields.io/badge/demo-pms.sensepraxis.com-brightgreen.svg)](https://pms.sensepraxis.com/)
 
 **Docs:** [sensepraxis.github.io/fangmanle-ai-native-pms](https://sensepraxis.github.io/fangmanle-ai-native-pms/) (Quick Start · Architecture · FAQ)
 
 **Fangmanle PMS** is an **AI-native hotel PMS** (property management system): **open source**, **self-hosted**, one process per hotel. Assemble operations from a **hotel YAML** plus **pluggable extensions** (maps, LLM, private-domain messaging, tax). Version **1.0.0** — [CHANGELOG.md](CHANGELOG.md).
+
+### Live demo
+
+Try the hosted seed environment (sample guests, rooms, orders — reset periodically):
+
+| | |
+|--|--|
+| **URL** | [https://pms.sensepraxis.com/](https://pms.sensepraxis.com/) |
+| **Login** | `admin` / `admin123` |
+| **Note** | Public demo only — change passwords before any real deployment |
+
+Prefer local? Jump to [Quick Start](#quick-start) or [INSTALL.md](INSTALL.md).
 
 ## What is Fangmanle PMS?
 

@@ -4,6 +4,8 @@ Official start paths for this **self-hosted** hotel PMS are **only** `deploy/dev
 Chinese offline-pack handbook: [docs/DEPLOY_zh.md](docs/DEPLOY_zh.md) (optional extra tooling, not the default).  
 Operator notes: [deploy/README.md](deploy/README.md).
 
+**Live demo (no install):** [https://pms.sensepraxis.com/](https://pms.sensepraxis.com/) — login `admin` / `admin123` (public seed data; reset periodically).
+
 ---
 
 ## 1. Docker one-command (PostgreSQL)
