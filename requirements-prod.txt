@@ -10,7 +10,7 @@
 #
 # 注意：gmssl 为纯 Python 国密库（SM2/SM3/SM4），请勿误装未维护的同名包 gmssl-py。
 fastapi==0.115.6
-uvicorn[standard]==0.34.0
+uvicorn[standard]==0.54.0
 sqlalchemy==2.0.36
 psycopg[binary]==3.2.3
 cryptography==44.0.0
