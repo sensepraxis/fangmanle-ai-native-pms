@@ -6,6 +6,10 @@
 
 **Fangmanle PMS** is an **open-source**, **self-hosted**, **AI-native hotel PMS** for **one hotel per process**. Not multi-tenant SaaS. Overview: [README.md](README.md). Deploy: [INSTALL.md](INSTALL.md).
 
+## Is there a live demo?
+
+Yes: **[https://pms.sensepraxis.com/](https://pms.sensepraxis.com/)** — login `admin` / `admin123`. It runs the Docker seed stack (sample data; reset periodically). For your own machine use [INSTALL.md](INSTALL.md).
+
 ## Deploy / start failed
 
 | Symptom | What to do |

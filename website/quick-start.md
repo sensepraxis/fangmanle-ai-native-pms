@@ -4,6 +4,8 @@ Official start paths for this **self-hosted** hotel PMS are **only** `deploy/dev
 Chinese offline-pack handbook: [docs/DEPLOY_zh.md](https://github.com/sensepraxis/fangmanle-ai-native-pms/blob/main/docs/DEPLOY_zh.md) (optional extra tooling, not the default).  
 Operator notes: [deploy/README.md](https://github.com/sensepraxis/fangmanle-ai-native-pms/blob/main/deploy/README.md).
 
+**Live demo (no install):** [https://pms.sensepraxis.com/](https://pms.sensepraxis.com/) — login `admin` / `admin123` (public seed data; reset periodically).
+
 ---
 
 ## 1. Docker one-command (PostgreSQL)

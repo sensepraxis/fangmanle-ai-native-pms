@@ -6,6 +6,10 @@
 
 **房满乐 PMS** 是 **开源、可自托管、AI 原生的酒店 PMS**：**一个进程一家店**，不是多租户 SaaS。概述见 [README_zh.md](README_zh.md)，部署见 [INSTALL.md](INSTALL.md)。
 
+## 有在线演示吗？
+
+有：**[https://pms.sensepraxis.com/](https://pms.sensepraxis.com/)**，账号 `admin` / `admin123`。对应 Docker seed 样例数据，会定期重灌。本机部署见 [INSTALL.md](INSTALL.md)。
+
 ## 部署 / 启动失败
 
 | 现象 | 处理 |
