@@ -27,6 +27,24 @@
 
 本机自建见下文「本地启动指南」或 [INSTALL.md](INSTALL.md)。
 
+### 界面截图
+
+中文界面（演示站右上角可切语言）。英文截图见 [README.md](README.md)。
+
+| 首页运营提示 | 房态面板 |
+|:---:|:---:|
+| ![首页](docs/images/01-overview-zh.png) | ![房态](docs/images/02-room-board-zh.png) |
+
+| AI 问数 | 价格助手 |
+|:---:|:---:|
+| ![AI 问数](docs/images/03-ask-zh.png) | ![价格助手](docs/images/04-pricing-zh.png) |
+
+<p align="center">
+  <img src="docs/images/05-pricing-ai-zh.png" alt="价格助手 AI 定价" width="720" />
+  <br />
+  <em>价格助手 — AI 定价建议与可解释依据</em>
+</p>
+
 ## 这是什么？（What is Fangmanle PMS?）
 
 面向**单店**的自托管酒店管理系统：房态、订单、客房、财务、客人，以及可选的商业 LLM 场景。OpenCore（`src/` 除 `commercial/`）为 [Apache-2.0](LICENSE)；问数 / 交班 AI 等在 `src/commercial/`，适用 [BUSL-1.1](LICENSE-BUSL)。这是**你自己跑的酒店管理软件**，不是多租户云 PMS。

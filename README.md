@@ -27,6 +27,24 @@ Try the hosted seed environment (sample guests, rooms, orders — reset periodic
 
 Prefer local? Jump to [Quick Start](#quick-start) or [INSTALL.md](INSTALL.md).
 
+### Screenshots
+
+English UI (switch language in the top-right of the demo). Chinese captures: [README_zh.md](README_zh.md).
+
+| Ops overview tip | Room status |
+|:---:|:---:|
+| ![Overview with AI tip](docs/images/01-overview-en.png) | ![Room board](docs/images/02-room-board-en.png) |
+
+| AI analytics Q&A | Pricing assistant |
+|:---:|:---:|
+| ![Ask / AI Q&A](docs/images/03-ask-en.png) | ![Pricing](docs/images/04-pricing-en.png) |
+
+<p align="center">
+  <img src="docs/images/05-pricing-ai-en.png" alt="AI pricing explain" width="720" />
+  <br />
+  <em>Pricing assistant — AI recommendation with explainable rationale</em>
+</p>
+
 ## What is Fangmanle PMS?
 
 A **self-hosted** front-office and ops stack for a **single hotel**: rooms, orders, housekeeping, finance, guests, and optional commercial LLM scenes. OpenCore (`src/` except `commercial/`) is [Apache-2.0](LICENSE). Ask / shift AI / other LLM packs live in `src/commercial/` under [BUSL-1.1](LICENSE-BUSL). It is **hotel management software you run**, not a multi-tenant cloud PMS.
@@ -80,14 +98,6 @@ Open http://127.0.0.1:8081/ — login **`admin` / `admin123`**. Production is **
 | `locales/` | Canonical zh/en phrasebook |
 
 `src/locales/` and `frontend/src/locales/` are generated mirrors. Edit root `locales/` only. See [docs/I18N.md](docs/I18N.md).
-
----
-
-## Screenshots
-
-This tree does not yet ship product PNGs. After a local start you should see the admin UI at the URLs below. Drop captures into `docs/images/` if you maintain a fork landing page.
-
-Typical surfaces: room board, front desk, shift handover, Ask (commercial on), system / LLM settings.
 
 ---
 
