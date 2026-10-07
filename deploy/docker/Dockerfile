@@ -1,6 +1,6 @@
 # Fangmanle PMS · application image
 # Build from repo root:
-#   docker build -f deploy/docker/Dockerfile -t fangmanle-pms:1.0.0 .
+#   docker build -f deploy/docker/Dockerfile -t fangmanle-pms:1.0.1 .
 
 # vite.config.ts aliases @locales -> ../locales (repo root). Keep that layout
 # inside the image so `npm run build` can resolve locales/*.json.

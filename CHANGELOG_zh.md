@@ -2,9 +2,22 @@
 
 [English](CHANGELOG.md) · **简体中文**
 
-本仓库当前版本：**1.0.0**。以 git tag `v1.0.0`（发布时打上）与本文件对照；未打 tag 前以 `main` 最新提交为准。
+本仓库当前版本：**1.0.1**。以 git tag `v1.0.1`（发布时打上）与本文件对照；未打 tag 前以 `main` 最新提交为准。
 
 格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)。
+
+## [1.0.1] - 2026-10-07
+
+### Fixed
+
+- Docker 前端构建：在 Node 阶段拷贝仓库根 `locales/`，避免 Vite `@locales` 在 `npm run build` 时 ENOENT。
+- Postgres 灌库脚本（`db/postgres/docker-init.sh`）：默认 `FML_DB_ROOT=/db/postgres`；Alpine 用 `sha256sum` 算管理员密码；同时存在时优先 `*.opensource.sql`；去掉 `DO` 块内无效的 `:'var'` 替换。
+- Compose seed/prod：`FML_DB_ROOT=/db/postgres`；`pms` 与 `db` 均传入 `FML_ADMIN_*`。
+
+### Added
+
+- `run_prod`：种子未写入可登录 admin 时启动补建。
+- README / INSTALL / FAQ / 文档站补充在线演示与产品截图（`https://pms.sensepraxis.com/`）。
 
 ## [1.0.0] - 2026-10-06
 

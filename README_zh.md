@@ -13,7 +13,7 @@
 
 **文档站：** [sensepraxis.github.io/fangmanle-ai-native-pms](https://sensepraxis.github.io/fangmanle-ai-native-pms/)（Quick Start · Architecture · FAQ）
 
-**房满乐 PMS** 是一套 **AI 原生（AI-native）酒店 PMS**： **开源（open source）**、**可自托管（self-hosted）**、一个进程服务一家店。用 **酒店 YAML + 可插拔 Extensions**（地图 / LLM / 私域通道 / 税票）组装前台与运营。版本 **1.0.0** — [CHANGELOG_zh.md](CHANGELOG_zh.md)。
+**房满乐 PMS** 是一套 **AI 原生（AI-native）酒店 PMS**： **开源（open source）**、**可自托管（self-hosted）**、一个进程服务一家店。用 **酒店 YAML + 可插拔 Extensions**（地图 / LLM / 私域通道 / 税票）组装前台与运营。版本 **1.0.1** — [CHANGELOG_zh.md](CHANGELOG_zh.md)。
 
 ### 在线演示
 

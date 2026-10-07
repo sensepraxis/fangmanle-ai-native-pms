@@ -1,9 +1,22 @@
 # Changelog
 
-Current version: **1.0.0**. Pair this file with git tag `v1.0.0` when that tag exists; until then, `main` is the source of truth.
+Current version: **1.0.1**. Pair this file with git tag `v1.0.1` when that tag exists; until then, `main` is the source of truth.
 
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).  
 Chinese copy: [CHANGELOG_zh.md](CHANGELOG_zh.md).
+
+## [1.0.1] - 2026-10-07
+
+### Fixed
+
+- Docker frontend build: copy repo-root `locales/` into the Node stage so Vite `@locales` resolves during `npm run build`.
+- Postgres seed init (`db/postgres/docker-init.sh`): default `FML_DB_ROOT` to `/db/postgres`, hash admin passwords without `python3` on Alpine, prefer `*.opensource.sql` when both dumps exist, and reset admin without broken `DO` + `:'var'` substitution.
+- Compose seed/prod: set `FML_DB_ROOT=/db/postgres`; pass `FML_ADMIN_*` into the `pms` service as well as `db`.
+
+### Added
+
+- `run_prod`: bootstrap a loginable admin when SQL seed never created one.
+- Live demo links and product screenshots in README / INSTALL / FAQ / website docs (`https://pms.sensepraxis.com/`).
 
 ## [1.0.0] - 2026-10-06
 

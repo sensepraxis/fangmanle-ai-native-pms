@@ -50,5 +50,5 @@ docker compose -f deploy/docker/docker-compose.prod.yml up -d --build
 **Change hotel / passwords / ports / map keys:** edit the compose file (`pms.environment.FML_HOTEL`, `POSTGRES_PASSWORD`, `FML_JWT_SECRET`, `FML_ADMIN_PASSWORD`, ports).  
 Do not use a root `.env` for hotel selection.
 
-Image build: `docker build -f deploy/docker/Dockerfile -t fangmanle-pms:1.0.0 .`  
+Image build: `docker build -f deploy/docker/Dockerfile -t fangmanle-pms:1.0.1 .`  
 App port default **8000**. For local OpenCore-only, use `start-opencore.*`.

@@ -13,7 +13,7 @@
 
 **Docs:** [sensepraxis.github.io/fangmanle-ai-native-pms](https://sensepraxis.github.io/fangmanle-ai-native-pms/) (Quick Start · Architecture · FAQ)
 
-**Fangmanle PMS** is an **AI-native hotel PMS** (property management system): **open source**, **self-hosted**, one process per hotel. Assemble operations from a **hotel YAML** plus **pluggable extensions** (maps, LLM, private-domain messaging, tax). Version **1.0.0** — [CHANGELOG.md](CHANGELOG.md).
+**Fangmanle PMS** is an **AI-native hotel PMS** (property management system): **open source**, **self-hosted**, one process per hotel. Assemble operations from a **hotel YAML** plus **pluggable extensions** (maps, LLM, private-domain messaging, tax). Version **1.0.1** — [CHANGELOG.md](CHANGELOG.md).
 
 ### Live demo
 
