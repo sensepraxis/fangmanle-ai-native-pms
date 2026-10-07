@@ -142,6 +142,71 @@ def _log_hotel_config() -> None:
         print(f"[run_prod] Hotel config resolve failed: {e}", flush=True)
 
 
+def _ensure_bootstrap_admin() -> None:
+    """If SQL seed never created a loginable admin, create one (idempotent).
+
+    Docker init can fail (wrong FML_DB_ROOT, dual demo SQL, alpine without python3)
+    while run_prod still create_all()'s empty tables — then UI login always 401.
+    """
+    from database import SessionLocal
+    from infra.auth_local import hash_password
+    from infra.rbac_service import ensure_system_roles
+    from models import Hotel, User
+
+    admin_user = (os.environ.get("FML_ADMIN_USERNAME") or "admin").strip() or "admin"
+    admin_pass = os.environ.get("FML_ADMIN_PASSWORD") or "admin123"
+
+    db = SessionLocal()
+    try:
+        existing = db.query(User).filter_by(username=admin_user).first()
+        if existing and existing.is_active and existing.password_hash:
+            return
+
+        hotel = db.query(Hotel).order_by(Hotel.id).first()
+        if not hotel:
+            hotel = Hotel(
+                id=1,
+                code="LOCAL",
+                name="本店",
+                timezone="Asia/Shanghai",
+                currency="CNY",
+                star_rating=4,
+                is_active=True,
+            )
+            db.add(hotel)
+            db.flush()
+
+        roles = ensure_system_roles(db)
+        admin_role = roles.get("admin")
+        pw_hash = hash_password(admin_pass)
+
+        if not existing:
+            db.add(
+                User(
+                    hotel_id=hotel.id,
+                    role_id=admin_role.id if admin_role else None,
+                    username=admin_user,
+                    password_hash=pw_hash,
+                    full_name="System Administrator",
+                    is_active=True,
+                )
+            )
+            print(f"[run_prod] bootstrap admin created: {admin_user}", flush=True)
+        else:
+            existing.password_hash = pw_hash
+            existing.is_active = True
+            existing.hotel_id = existing.hotel_id or hotel.id
+            if admin_role:
+                existing.role_id = admin_role.id
+            print(f"[run_prod] bootstrap admin repaired: {admin_user}", flush=True)
+        db.commit()
+    except Exception as e:  # noqa: BLE001
+        db.rollback()
+        print(f"[run_prod] bootstrap admin skipped: {e}", flush=True)
+    finally:
+        db.close()
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description="PMS production start (brand via FML_APP_NAME)")
     ap.add_argument("--host", default=os.environ.get("FML_HOST", "0.0.0.0"))
@@ -155,6 +220,8 @@ def main() -> None:
         print("[run_prod] ensuring schema …")
         _ensure_schema()
         print("[run_prod] schema ready")
+
+    _ensure_bootstrap_admin()
 
     import uvicorn
 

@@ -2,11 +2,14 @@
 # Build from repo root:
 #   docker build -f deploy/docker/Dockerfile -t fangmanle-pms:1.0.0 .
 
+# vite.config.ts aliases @locales -> ../locales (repo root). Keep that layout
+# inside the image so `npm run build` can resolve locales/*.json.
 FROM node:20-bookworm-slim AS frontend
-WORKDIR /fe
+WORKDIR /build/frontend
 COPY frontend/package.json frontend/package-lock.json* ./
 RUN if [ -f package-lock.json ]; then npm ci; else npm install; fi
 COPY frontend/ ./
+COPY locales/ /build/locales/
 RUN npm run build
 
 FROM python:3.12-slim-bookworm
@@ -30,7 +33,7 @@ RUN pip install --no-cache-dir -r /app/requirements-prod.txt
 COPY src/ /app/src/
 COPY config/ /app/config/
 COPY locales/ /app/locales/
-COPY --from=frontend /fe/dist/ /app/frontend/dist/
+COPY --from=frontend /build/frontend/dist/ /app/frontend/dist/
 
 ENV FML_HOTEL=demo-intl \
     FML_TZ=UTC

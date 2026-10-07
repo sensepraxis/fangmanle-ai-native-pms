@@ -17,7 +17,8 @@ services:
       POSTGRES_USER: fangmanle
       POSTGRES_PASSWORD: change-me-in-production
       POSTGRES_DB: fangmanle
-      FML_DB_ROOT: /db
+      # SQL lives under db/postgres/{01_ddl,02_init,03_demo}
+      FML_DB_ROOT: /db/postgres
       FML_DB_SKIP_DEMO: "1"
       FML_ADMIN_USERNAME: admin
       FML_ADMIN_PASSWORD: admin123
@@ -53,6 +54,8 @@ services:
       FML_PORT: 8000
       # Hotel id: demo-intl / demo-cn / demo-sg / custom (must exist as config/hotels/<id>.yaml)
       FML_HOTEL: demo-intl
+      FML_ADMIN_USERNAME: admin
+      FML_ADMIN_PASSWORD: admin123
       TZ: UTC
       MAP_PROVIDER: tianditu
       TIANDITU_TK: ""
